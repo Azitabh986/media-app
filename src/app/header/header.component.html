@@ -1,0 +1,19 @@
+<div class="header">
+    <div class="logo"><img src="./assets/images/channel.png" height="60px" width="60px" /></div>
+      <a routerLink="/home" routerLinkActive="active">Home</a>
+      <a *ngIf="this.role=='private'" routerLink="/gallery" routerLinkActive="active">Gallery</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+    <div class="header-right"> 
+        <div class="buttonCss">
+            <button routerLink="/home" routerLinkActive="active" *ngIf="!this.logoutEnable" (click)="loginEvent()">Login</button>
+            <button routerLink="/home" routerLinkActive="active" *ngIf="this.logoutEnable" (click)="logoutEvent()">Logout</button>
+            <div  *ngIf="showLoginForm && !this.userName">
+                <app-login-form></app-login-form>
+            </div>
+        </div>
+    </div>
+    <div class="userNameCss" *ngIf="this.userName">
+        Welcome {{this.userName | titlecase}}
+    </div>
+  </div>
+ 

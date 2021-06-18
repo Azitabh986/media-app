@@ -1,0 +1,20 @@
+<div class="modal" *ngIf="!this.close">
+  <span (click)="closeEvent()" class="close">&times;</span>
+  <div class="formCss">
+    <span>Please Enter your Login Details</span>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <label for="first-name">User Id: </label>
+      <input
+        type="type"
+        placeholder="User Id" 
+        id="first-name" type="text" 
+        formControlName="userId"
+      >
+      <label for="last-name">Password: </label>
+      <input id="last-name" type="password" 
+      placeholder="Password" 
+      formControlName="password">
+      <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+    </form>
+  </div>
+</div>

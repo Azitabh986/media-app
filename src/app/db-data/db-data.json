@@ -1,0 +1,17 @@
+{ 
+    "usersDB": [ 
+        {
+            "userid" : "abc@media.com",
+            "password":"abc123",
+            "username":"tom",
+            "role":"private"
+        }, 
+        {
+            "userid" : "def@media.com",
+            "password":"def123",
+            "username":"dick",
+            "role":"public"
+        }
+    
+    ]
+}

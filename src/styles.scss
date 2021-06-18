@@ -1,1 +1,135 @@
 /* You can add global styles to this file, and also import other style files */
+$button-min-width:120px;
+$button-min-height:42px;
+$button-border-radius:5px;
+$button-background-color:#337ab7;
+$button-text-color:#fff;
+$default-font-family:noto_sansbold;
+$default-font-size:18px;
+$label-color:#464646;
+$input-height:35px;
+// button css 
+.buttonCss{
+    button{
+    min-width: $button-min-width;
+    height: $button-min-height;
+    font-family: $default-font-family;
+    cursor: pointer;
+    font-size: $default-font-size;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: center;
+    outline: none;
+    background-color:$button-background-color;
+    border-radius: $button-border-radius;
+    color: $button-text-color;
+    box-shadow: inset -1px 1px 0 0 rgba(255, 255, 255, 0);
+    border: solid 1px $button-background-color;
+    padding: 0 16px;
+    } 
+    button:hover{
+        background-color:$button-text-color; 
+        color: $button-background-color;
+    }
+}
+// modal-popup css
+.modal {
+    display: block; 
+    z-index: 1; 
+    height: 40%; 
+    overflow: auto; 
+    // background-color: rgb(0 0 0 / 50%); 
+    background-color: #fefefe;
+    position: fixed;
+    left: 25%;
+    top: 25%;
+    width: 40%;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 50%);
+  }
+  .close {
+    color: $button-background-color;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+  }
+  .close:hover{
+    border: 2px solid $button-background-color;
+    border-radius: 5px;
+  }
+// form css
+.formCss{
+  padding: 25px;
+  top: 0%;
+  span{
+    font-size: 24px;
+    font-family: $default-font-family;
+    color: $label-color;
+    display: block;
+    padding-bottom: 5px;
+    font-weight: 900; 
+    padding-bottom: 20px;
+  }
+  form{
+    label{
+      font-size: $default-font-size;
+      font-family: $default-font-family;
+      color: $label-color;
+      display: block;
+      padding-bottom: 5px;
+      font-weight: 900;
+    }
+    input{
+      width: 90%;
+      height: $input-height;
+      margin-bottom: 15px;
+      padding: 3px;
+    }
+    input:hover{
+      border: 2px solid $button-background-color;
+    }
+    input:focus{
+      border: 2px solid #000;
+    }
+  }
+  
+}
+.userNameCss{
+  font-size: 24px;
+  font-family: noto_sansbold;
+  color: #337ab7;
+  display: block;
+  font-weight: 900;
+  text-align: center;
+  background-color: #fefefe;
+  padding: 10px;
+  display: flex;
+  float: right;
+  margin-right: 25px;
+  border-radius: 20px;
+}
+.textCss{
+  @extend .userNameCss;
+  margin-right: 0px !important;
+  text-align: left;
+  font-family: noto_sansregular;
+  font-weight: 400;
+}
+.textCssAbout{
+  @extend .userNameCss;
+  color: #464646 !important;
+  text-align: center;
+  font-family: noto_sansregular;
+  font-weight: 400;
+}
+// grid css for image display
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
