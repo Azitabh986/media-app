@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import  { usersDB }  from 'src/app/db-data/db-data.json';
+import * as usersDB from 'src/app/db-data/db-data.json';
 import {  SharedService } from '../shared.service';
-import { userInfo } from './login-form.interface';
+import { userData } from './login-form.interface';
 
 @Component({
   selector: 'app-login-form',
@@ -11,11 +11,12 @@ import { userInfo } from './login-form.interface';
 export class LoginFormComponent implements OnInit {
 
   public checkLoginValidated:boolean;
-  userData:Array<userInfo>;
+
   userName:string;
   close:boolean;
+  userData:Array<userData>;
   constructor(private serviceService: SharedService) {
-    this.userData=usersDB;
+    this.userData=usersDB['default']?.usersDB;
    }
   profileForm = new FormGroup({
     userId: new FormControl(''),
@@ -36,8 +37,8 @@ export class LoginFormComponent implements OnInit {
     for(let i=0;this.userData.length;i++){
      try{
       if(this.userData[i]['userid']==userId && this.userData[i]['password']==password){
+        this.serviceService.setUserType(this.userData[i]['type']);
         this.serviceService.setUserName(this.userData[i]['username']);
-        this.serviceService.setRole(this.userData[i]['role']);
         returnValue=true;
         break;
       }

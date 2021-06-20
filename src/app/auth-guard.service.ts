@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { CanActivate } from '@angular/router';
+import { EncrDecrService } from './encrypt/encr-decr.service';
 import { SharedService } from './shared.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuardService implements CanActivate {
- private role;
-  constructor(private _router:Router,private sharedService:SharedService ) {
+ private userType;
+  constructor(private sharedService:SharedService,private EncrDecr: EncrDecrService ) {
   }
 
-  canActivate(route: ActivatedRouteSnapshot,
-              state: RouterStateSnapshot): boolean {
-      this.sharedService.getRole().subscribe(res=>{
-        this.role=res;
+  canActivate(): boolean {
+      this.sharedService.getUserType().subscribe(res=>{
+        this.userType=res;
       })
-      if(this.role!='private'){
+      if(!this.userType){
+        var decrypted = this.EncrDecr.get('123456$#@$^@1ERF',sessionStorage.getItem('userValue'));
+        this.userType=decrypted;
+      }
+      if(this.userType!='private'){
         return false;
       }
       return true;

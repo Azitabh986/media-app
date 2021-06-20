@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { GalleryPageComponent } from './gallery-page/gallery-page.component';
+import { EncrDecrService } from './encrypt/encr-decr.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { GalleryPageComponent } from './gallery-page/gallery-page.component';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [EncrDecrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

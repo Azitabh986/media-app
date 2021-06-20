@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 })
 export class SharedService {
   private userName=new Subject<string>();
-  private role=new Subject<any>();
+  private userType=new Subject<any>();
   constructor() { }
   setUserName(value){
     this.userName.next(value);
@@ -14,10 +14,10 @@ export class SharedService {
   getUserName(){
     return this.userName;
   }
-  setRole(value){
-    this.role.next(value);
+  setUserType(value){
+    this.userType.next(value);
   }
-  getRole(){
-    return this.role;
+  getUserType(){
+    return this.userType;
   }
 }

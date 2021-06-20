@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './gallery-page.component.html'
 })
 export class GalleryPageComponent implements OnInit {
-private imageArray=[];
+public imageArray=[];
   constructor() { }
 
   ngOnInit(): void {

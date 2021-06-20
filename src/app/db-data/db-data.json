@@ -4,13 +4,13 @@
             "userid" : "abc@media.com",
             "password":"abc123",
             "username":"tom",
-            "role":"private"
+            "type":"private"
         }, 
         {
             "userid" : "def@media.com",
             "password":"def123",
             "username":"dick",
-            "role":"public"
+            "type":"public"
         }
     
     ]
