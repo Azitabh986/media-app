@@ -15,12 +15,12 @@ Related terms include: clear channel, channel extender, Fibre Channel, Fibre Cha
 
   <div class="textAreaCss">
     <label>Type @ in the text box</label>
-  <textarea ngClass="{{selectedValueCss}}" type="text" [(ngModel)]="textAreaValue" (keyup)="keyUpEvent($event)">
+  <textarea autofocus ngClass="{{selectedValueCss}}" type="text" [(ngModel)]="textAreaValue" (keyup)="keyUpEvent($event)">
   </textarea>
   <div class="selectBoxCss" *ngIf="showDropdown">
-  <select class="selectCss" id="tempArrayListName" 
-  multiple data-max-options="6">     
-    <option *ngFor="let data of tempArrayListName" (click)="setValue(data)">{{data}}</option>
+  <select class="selectCss" id="tempArrayListName" autofocus
+  multiple data-max-options="6" >     
+    <option  *ngFor="let data of tempArrayListName" keyup.enter="setValue(data)" (click)="setValue(data)" >{{data}}</option>
   </select>
 </div>
 </div>
