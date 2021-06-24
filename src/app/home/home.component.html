@@ -1,24 +1,26 @@
 <h1>Channel</h1>
 <div class="textCss">
     In information technology, the term channel is used in a number of ways.
-
 In telecommunications in general, a channel is a separate path through which signals can flow.
-
 In the public switched telephone network (PSTN), a channel is one of multiple transmission paths within a single link between network points. For example, the commonly used (in North America) T-carrier system line service provides 24 64 Kbps channels for digital data transmission.
-
 In radio and television, a channel is a separate incoming signal or program source that a user can select.
-
 In optical fiber transmission using dense wavelength-division multiplexing (DWDM), a channel is a separate wavelength of light within a combined, multiplexed light stream.
-
 On the World Wide Web, a channel is a preselected Web site that can automatically send updated information for immediate display or viewing on request. See push technology.
-
 In computer and Internet marketing, a channel is a "middleman" between a product creator and the marketplace. Value-added resellers (VAR) and retail store chains are examples of channels in this context.
-
 Using Internet Relay Chat, a channel is a specific chat group.
-
 In IBM mainframe systems, a channel is a high bandwidth connection between a processor and other processors, workstations, printers, and storage devices within a relatively close proximity. It's also called a local connection as opposed to a remote (or telecommunication) connection.
-
 In a field-effect transistor (FET), a channel is the semiconductor path on which current flows.
-
 Related terms include: clear channel, channel extender, Fibre Channel, Fibre Channel over IP, channel associated signaling, and channel bank.
+</div>
+
+  <div class="textAreaCss">
+    <label>Type @ in the text box</label>
+  <textarea ngClass="{{selectedValueCss}}" type="text" [(ngModel)]="textAreaValue" (keyup)="keyUpEvent($event)">
+  </textarea>
+  <div class="selectBoxCss" *ngIf="showDropdown">
+  <select class="selectCss" id="tempArrayListName" 
+  multiple data-max-options="6">     
+    <option *ngFor="let data of tempArrayListName" (click)="setValue(data)">{{data}}</option>
+  </select>
+</div>
 </div>
